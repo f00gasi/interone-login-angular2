@@ -32,10 +32,10 @@ export class LoginformComponent implements OnInit {
 
 			setTimeout( () => {
 				this.isLoading = false;
-				this.blurClearElements();
 			}, 800);
 		});
 
+		this.blurClearElements();
 		console.log(this);
 	}
 
