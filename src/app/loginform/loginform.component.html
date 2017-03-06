@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+	
+	<div class="col-2">
+		<label for="username">Your email address</label>
+		<input [(ngModel)]="userInput.username" type="email" id="user" name="username" placeholder="Please enter your email address" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required #usernameInput>
+	</div>
+
+	<div class="col-2">
+		<label for="password">Your password</label>
+		<input [(ngModel)]="userInput.password" type="password" id="pw" name="password" placeholder="Please enter your password" required #passwordInput>
+	</div>
+
+	<div>
+ 		<button type="submit">Login</button>
+	</div>
+
+	<div class="status" *ngIf="!isLoading && submitted">
+		<div class="loginerror" *ngIf="!validLogin">The email or password you entered is incorrect.</div>
+		<div class="loginsuccess" *ngIf="validLogin">Login successful!</div>
+	</div>
+
+</form>
+
+<app-loader *ngIf="isLoading"></app-loader>

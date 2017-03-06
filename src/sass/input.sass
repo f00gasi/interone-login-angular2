@@ -1,0 +1,82 @@
+$mobile : android small-screen tablet
+@import reset, mixins, mediaqueries, grid, loader
+
+body 
+	font-family: Arial
+	background: #00ace4
+	color: white
+	font-size: 14px
+
+h1
+	font-size: 32px
+	font-weight: bold
+	@include translateY
+
+p
+	line-height: 1.5
+
+header
+	width: 100%
+	background: black
+	height: 77px
+	margin-bottom: 30px
+	color: white
+	position: relative
+	padding: 20px
+
+main 
+	width: 50%
+	padding: 20px
+	+respond-to(large-tablet)
+		width: 100%
+	@each $size in $mobile
+		+respond-to($size)
+			width: 100%
+
+#formContainer
+	margin-top: 20px
+
+	input
+		min-width: 70%
+		border: 1px solid transparent
+		border-radius: 3px
+		padding: 11px
+		font-size: 16px
+		background: white
+		outline: none
+		transition: background , 0.2s , linear
+		@each $size in $mobile
+			+respond-to($size)
+				width: 100%
+
+			&:focus
+				background: #e0e0e0
+
+	button
+		font-weight: bold
+		background: #00546f
+		color: #fff
+		border-radius: 3px
+		margin-top: 25px
+		border: none
+		padding: 9px 15px
+
+		&:hover
+			cursor: pointer
+
+	label
+		display: block
+		margin-bottom: 7px
+
+	.status
+		display: inline-block
+		font-weight: bold
+		padding: 7px
+		background: white
+		margin-top: 35px
+
+		.loginerror
+			color: red
+
+		.loginsuccess
+			color: green

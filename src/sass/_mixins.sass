@@ -1,0 +1,86 @@
+@mixin animation($animate...)
+  $max: length($animate)
+  $animations: ''
+
+  @for $i from 1 through $max
+    $animations: #{$animations + nth($animate, $i)}
+
+    @if $i < $max
+      $animations: #{$animations + ", "}
+
+  -webkit-animation: $animations
+  -moz-animation:    $animations
+  -o-animation:      $animations
+  animation:         $animations
+
+
+@mixin keyframes($animationName) 
+  @-webkit-keyframes #{$animationName}
+    @content
+
+  @-moz-keyframes #{$animationName}
+    @content
+
+  @-o-keyframes #{$animationName}
+    @content
+
+  @keyframes #{$animationName}
+    @content
+
+@mixin stuff
+  border-radius: 50%
+  width: 35px
+  height: 35px
+  background: $second-color
+  position: absolute
+  @each $size in $mobileReso
+    +respond-to($size)
+      width: 32px
+      height: 32px
+
+@mixin triangle
+  width: 0
+  height: 0
+  border-top: 22px solid transparent
+  border-bottom: 22px solid transparent
+  border-right: 22px solid white
+
+@mixin translateY
+  transform: translateY(-50%)
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  top: 50%
+  position: absolute
+
+@mixin translateX
+  transform: translateX(-50%)
+  -webkit-transform: translateX(-50%)
+  -ms-transform: translateX(-50%)
+  left: 50%
+  position: absolute
+
+@mixin translateXY
+  transform: translate(-50%, -50%)
+  -webkit-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  top: 50%
+  left: 50%
+  position: absolute
+
+@mixin clearTranslate
+  position: static
+  transform: none
+  left: 0
+  top: 0
+
+@mixin hideshow($timing)
+
+  opacity: 0
+  transition: visibility linear #{nth($timing, 1)}, opacity #{nth($timing, 2)} linear
+  visibility: hidden
+
+@mixin shadows($values)
+
+  -moz-box-shadow: $values
+  -webkit-box-shadow: $values
+  box-shadow: $values

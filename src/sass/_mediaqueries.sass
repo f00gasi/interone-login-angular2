@@ -1,0 +1,29 @@
+
+=respond-to($name)
+  @if $name == small-screen
+    @media only screen and (min-width: 250px) and (max-width: 479px)
+      @content
+
+  @if $name == android
+    @media only screen and (min-width: 480px) and (max-width: 599px)
+      @content
+
+  @if $name == tablet
+    @media only screen and (min-width: 600px) and (max-width: 800px)
+      @content
+
+  @if $name == large-tablet
+    @media only screen and (min-width: 800px) and (max-width: 1279px)
+      @content
+
+  @if $name == mid-screen
+    @media only screen and (min-width: 1280px) and (max-width: 1599px)
+      @content
+
+  @if $name == large-screen
+    @media only screen and (min-width: 1600px) and (max-width: 1919px)
+      @content
+
+  @if $name == hd-screen
+    @media only screen and (min-width: 1920px)
+      @content

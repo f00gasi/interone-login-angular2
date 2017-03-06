@@ -1,0 +1,28 @@
+.col-1
+	width: 100%
+
+.col-2
+	width: 50%
+	@each $size in $mobile
+		+respond-to($size)
+			width: 100%
+			padding-bottom: 20px
+
+.col-4
+	width: 25%
+
+.col-8
+	width: 12.5%
+
+[class*='col-']
+	float: left
+	position: relative
+
+.grid:after
+	content: ""
+	display: table
+	clear: both
+
+[class*='col-'] 
+	//padding-right: 20px
+	height: 100%
