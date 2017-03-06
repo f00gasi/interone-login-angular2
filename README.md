@@ -2,7 +2,7 @@
 
 Bitte "npm install" ausführen um die benötigten node_modules zu installieren
 
-Anschließend mit "ng serve" den dev server starten.
+Anschließend mit "ng serve" den Dev server starten (localhost:4200). Alternativ die kompilierten Dateien aus dem dist/ Ordner zum Ansehen benutzen.
 
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.

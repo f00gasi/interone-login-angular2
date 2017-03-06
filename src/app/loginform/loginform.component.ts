@@ -36,9 +36,10 @@ export class LoginformComponent implements OnInit {
 		});
 
 		this.blurClearElements();
-		console.log(this);
+		//console.log(this);
 	}
 
+	// MOCKUP CHECKT USER & PASSWORD
 	checkUser(serverData: Object) {
 		return this.userInput['username'] == serverData['username'] && this.userInput['password'] == serverData['password'];
 	}

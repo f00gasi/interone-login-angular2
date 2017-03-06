@@ -6,9 +6,9 @@ import { Observable } from "rxjs";
 @Injectable()
 export class HttpService {
 
-  constructor(private http: Http) {
-  }
+  constructor(private http: Http) {}
 
+  // JSON mit korrekten Userdaten
   getUser() {
     return this.http.get('./assets/user.json')
     .catch( error => {
